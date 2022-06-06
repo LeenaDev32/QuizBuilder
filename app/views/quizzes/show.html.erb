@@ -14,12 +14,31 @@
         <div class="card-body">
           <div class="row">
             <div class="col-sm-12">
-              <h3>Questions in this quiz:</h3><hr>
-                <ul>
-                <% @quiz.questions.each do |question| %>
-                  <li><%= question.title %></li>
-                <% end %>
-                </ul>
+              <h5>Questions in this quiz:</h5><hr>
+                <ol>
+                  <% @quiz.questions.each do |question| %>
+                    <li><%= question.title %></li>
+                      <% if question.answers.exists? %>
+                        <div class="ms-5 mt-0 col-md-6">
+                          <table class="table table-sm" style="border-collapse: unset;">
+                            <thead>
+                              <th>Answers</th>
+                              <th>Given By</th>
+                            </thead>
+                            <% question.answers.each do |answer| %>
+                                <tbody>
+                                  <tr>
+                                    <td><%= answer.response %></td>
+                                    <td><%= answer.user.name %></td>
+                                  </tr>
+                                </tbody>
+                            <% end %>
+                          </table>
+                        </div>
+                      <% end %>
+                    <br/>
+                  <% end %>
+                </ol>
             </div>
           </div>
         </div>

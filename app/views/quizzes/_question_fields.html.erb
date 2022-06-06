@@ -1,7 +1,14 @@
 <div class="mb-3 nested-fields">
-  <div class="field">
-    <%= f.label :title, class: "form-label" %>
-    <%= f.text_field :title, required: true, class: "form-control" %>
+  <div class="row g-3 align-items-center">
+    <div class="col-md-6">
+      <%= f.label :title, class: "form-label" %>
+      <%= f.text_field :title, required: true, class: "form-control" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.label :question_type, class: "form-label" %>
+      <%= f.select :question_type, Question::INPUT_TYPES, {required: true}, { class: 'form-select' } %>
+    </div>
   </div>
+
   <%= link_to_remove_association "remove questions", f %>
 </div>

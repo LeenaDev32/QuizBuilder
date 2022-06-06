@@ -48,6 +48,6 @@ class QuizzesController < ApplicationController
   end
 
   def quiz_params
-    params.require(:quiz).permit(:name, questions_attributes: %i[title id _destroy])
+    params.require(:quiz).permit(:name, questions_attributes: %i[title question_type id _destroy])
   end
 end

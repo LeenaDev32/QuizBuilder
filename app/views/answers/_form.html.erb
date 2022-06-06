@@ -2,7 +2,7 @@
   <% @quiz.questions.each do |question| %>
     <div class="mb-3 col-md-6">
       <%= f.label "#{question.title}", class: "form-label" %>
-      <%= f.text_field "#{question.id}", class: "form-control" %>
+      <input type="<%= question.question_type %>" id="age_adult" name="<%= question.id %>" class="form-control" />
     </div>
   <% end %>
   <%= f.hidden_field :quiz_id, value: @quiz.id %>
