@@ -50,3 +50,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Devise is a flexible authentication solution for Rails based on Warden
 gem 'devise'
+
+# Cocoon makes it easier to handle nested forms.
+gem "cocoon"

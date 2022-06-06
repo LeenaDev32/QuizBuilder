@@ -9,6 +9,7 @@ class QuizzesController < ApplicationController
 
   def new
     @quiz = Quiz.new
+    @questions = @quiz.questions.build
   end
 
   def create
@@ -21,9 +22,12 @@ class QuizzesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @questions = @quiz.questions
+  end
 
   def update
+    @questions = @quiz.questions
     if @quiz.update(quiz_params)
       redirect_to quizzes_path, notice: 'Quiz updated successfully!'
     else
@@ -43,6 +47,6 @@ class QuizzesController < ApplicationController
   end
 
   def quiz_params
-    params.require(:quiz).permit(:name)
+    params.require(:quiz).permit(:name, questions_attributes: %i[title id _destroy])
   end
 end

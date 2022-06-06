@@ -33,9 +33,9 @@
                     <th scope="row"><%= i+1 %></th>
                     <th scope="row"><%= quiz.name %></th>
                     <td>
-                      <%= link_to "Show", quiz_path(quiz) %> |
-                      <%= link_to "Edit", edit_quiz_path(quiz) %> |
-                      <%= link_to "Delete", quiz_path(quiz), method: :delete %>
+                      <%= link_to "Show", quiz_path(quiz), class: "btn btn-outline-dark btn-sm" %> |
+                      <%= link_to "Edit", edit_quiz_path(quiz), class: "btn btn-outline-dark btn-sm" %> |
+                      <%= link_to "Delete", quiz_path(quiz), method: :delete, class: "btn btn-outline-dark btn-sm" %>
                     </td>
                   </tr>
                   <% end %>

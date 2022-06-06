@@ -14,7 +14,12 @@
         <div class="card-body">
           <div class="row">
             <div class="col-sm-12">
-                <h1>Questions for quiz</h1>
+              <h3>Questions in this quiz:</h3><hr>
+                <ul>
+                <% @quiz.questions.each do |question| %>
+                  <li><%= question.title %></li>
+                <% end %>
+                </ul>
             </div>
           </div>
         </div>
