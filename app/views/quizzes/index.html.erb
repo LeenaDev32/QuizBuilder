@@ -32,6 +32,7 @@
                   <tr>
                     <th scope="row"><%= i+1 %></th>
                     <th scope="row"><%= quiz.name %></th>
+                    <th scope="row"><%= link_to "Take Quiz", new_answer_path(quiz_id: quiz.id), class: "btn btn-outline-dark btn-sm" %></th>
                     <td>
                       <%= link_to "Show", quiz_path(quiz), class: "btn btn-outline-dark btn-sm" %> |
                       <%= link_to "Edit", edit_quiz_path(quiz), class: "btn btn-outline-dark btn-sm" %> |

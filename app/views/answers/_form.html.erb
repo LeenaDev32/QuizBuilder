@@ -1,0 +1,10 @@
+<%= form_with url: answers_path, method: :post do |f| %>
+  <% @quiz.questions.each do |question| %>
+    <div class="mb-3 col-md-6">
+      <%= f.label "#{question.title}", class: "form-label" %>
+      <%= f.text_field "#{question.id}", class: "form-control" %>
+    </div>
+  <% end %>
+  <%= f.hidden_field :quiz_id, value: @quiz.id %>
+  <%= f.submit class: "btn btn-primary"%>
+<% end %>

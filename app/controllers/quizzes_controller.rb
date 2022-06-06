@@ -1,4 +1,5 @@
 class QuizzesController < ApplicationController
+  before_action :authenticate_admin!, except: :index
   before_action :quiz, only: %i[show edit update destroy]
 
   def index
