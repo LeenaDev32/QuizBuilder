@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :rememberable, :validatable # , :recoverable
 
   enum role: %i[user admin].freeze
+
+  has_many :quizzes
+  has_many :answers
 end

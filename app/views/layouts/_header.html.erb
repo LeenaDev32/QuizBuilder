@@ -21,6 +21,7 @@
           <%= link_to "Sign Up", new_user_registration_path, class: "nav-link active" %>
         </li>
       <% end %>
+      <p class="mt-2 ms-2"><%= '@' + current_user.email.split("@")[0] if user_signed_in? %></p>
       </ul>
     </div>
   </div>
