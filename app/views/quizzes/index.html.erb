@@ -1,0 +1,51 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-12">
+      <div class="page-title-box">
+        <h4 class="page-title">Quizes</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row mb-2">
+            <div class="col-auto float-left">
+              <%= link_to "Add Quiz", new_quiz_path, class: "btn btn-danger mb-2"%>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @quizzes.each_with_index do |quiz, i| %>
+                  <tr>
+                    <th scope="row"><%= i+1 %></th>
+                    <th scope="row"><%= quiz.name %></th>
+                    <td>
+                      <%= link_to "Show", quiz_path(quiz) %> |
+                      <%= link_to "Edit", edit_quiz_path(quiz) %> |
+                      <%= link_to "Delete", quiz_path(quiz), method: :delete %>
+                    </td>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
