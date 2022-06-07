@@ -1,24 +1,20 @@
-# README
+### Requirements *Ruby 3.0.4
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## How to get started:
 
-Things you may want to cover:
+Clone repo `git clone <link to repo>`
 
-* Ruby version
+Run `bundle install`
 
-* System dependencies
+Run `yarn install`
 
-* Configuration
+Run `rails db:create db:migrate db:seed`
 
-* Database creation
+Run server `rails s`
 
-* Database initialization
+*NOTE: You can refer to seed.rb file for initial admin and normal user credentials
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Test Case Steps:
 
-* Deployment instructions
-
-* ...
+Run rspec spec/models
