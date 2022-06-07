@@ -6,6 +6,9 @@ class User < ApplicationRecord
 
   enum role: %i[user admin].freeze
 
+  validates :email, presence: true, uniqueness: true
+  validates :name, :role, presence: true
+
   has_many :quizzes
   has_many :answers
 end

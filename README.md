@@ -15,6 +15,6 @@ Run server `rails s`
 *NOTE: You can refer to seed.rb file for initial admin and normal user credentials
 
 
-## Test Case Steps:
+## To run rspec case:
 
-Run rspec spec/models
+Run `rspec`
